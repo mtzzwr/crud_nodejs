@@ -56,7 +56,7 @@ __Deletar um registro específico da tabela__
 
 ![](img/9.PNG)
 
--- E no resultado, não temos o usuário de ID número 2, pois o mesmo foi excluído.
+- E no resultado, não temos o usuário de ID número 2, pois o mesmo foi excluído.
 ![](img/10.PNG)
 
 **_Mateus Gonçalves - 27/11/2019_**
