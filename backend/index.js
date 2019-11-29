@@ -4,6 +4,7 @@ const status = require('http-status');
 const sequelize = require('./src/database/database');
 const app = express();
 const routes = require('./src/routes/routes');
+const cors = require('cors');
 
 // iniciando a aplicação avisando que os tipos de dados são json
 app.use(express.json());
@@ -20,6 +21,12 @@ app.use((req, res, next) => {
 // tratamento de erros
 app.use((req, res, next) => {
     res.status.apply(status.INTERNAL_SERVER_ERROR).json({error});
+});
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
 });
 
 // sincronização do sequelize com a definição da porta e servidor
