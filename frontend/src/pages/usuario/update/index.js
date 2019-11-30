@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import './index.css';
+import moment from 'moment';
 
 class EditarUsuario extends Component {
     constructor(props) {
@@ -56,7 +57,7 @@ class EditarUsuario extends Component {
                         <div className="usuario-update">
                             <label htmlFor="dataNascimento">Data de nascimento</label><br />
                             <input type="text" id="data" name="dataNascimento"
-                                required value={this.state.usuario.dataNascimento}
+                                required value={moment(this.state.usuario.dataNascimento).format('DD/MM/YYYY')}
                                 onChange={this.handleInputChange} />
                         </div>
                         <button type="submit">Atualizar</button>

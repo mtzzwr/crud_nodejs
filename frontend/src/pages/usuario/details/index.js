@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './index.css';
+import moment from 'moment';
 
 export default class Usuario extends Component {
     state = {
@@ -30,8 +31,8 @@ export default class Usuario extends Component {
         return (
             <div className="usuario-info">
                 <h1>{usuario.nome}</h1>
-                <h1>{usuario.salario}</h1>
-                <h1>{usuario.dataNascimento}</h1>
+                <h1>{new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(usuario.salario)}</h1>
+                <h1>{moment(usuario.dataNascimento).format('DD/MM/YYYY')}</h1>
                 <h1>{usuario.ativo}</h1>
                 <br />
                 <Link to={`/usuarios`}>Voltar</Link><br />
